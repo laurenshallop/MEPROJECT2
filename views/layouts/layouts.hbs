@@ -1,0 +1,43 @@
+<!-- comes from server js line 25, {{ = syntax for handlebars-->
+<html>
+    <head>
+        <title>
+        {{# if loggedin}}
+            Welcome {{userName}}
+        {{else }}
+            NodeJS
+        {{/if}}
+        </title>
+       <!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet"/>
+    </head>
+<body class="container">
+    <div class="page-header">
+        <h1>Simple Auth-System</h1>
+    </div>
+
+    <nav class ="navbar navbar-default">
+        <div class="container-fluid">
+            <!--Collect the nav links, forms, and other content for toggling-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/signup">Sign Up</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                </ul>
+            <!-- either see log in or log out button depending on if the user is logged in/out-->
+                <ul class="nav navbar-nav navbar-right">
+                {{# if loggedin}}
+                    <li><a href="/logout">Log Out</a></li>
+                {{else }}
+                    <li><a href="/login">Log In</a></li>
+                {{/if}}
+
+                </ul>
+            </div>
+        </div> 
+    </nav>
+
+        {{{body}}}
+    </body>
+</html>
